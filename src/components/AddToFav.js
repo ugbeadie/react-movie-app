@@ -3,7 +3,7 @@ import React from 'react'
 const AddToFav = () => {
     return (
         <>
-            <span>Adds To Favorites</span>
+            <span>Add To Favorites</span>
         </>
     )
 }

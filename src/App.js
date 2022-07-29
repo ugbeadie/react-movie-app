@@ -26,6 +26,10 @@ function App() {
   }
 
   useEffect(() => {
+    searchMovies('avengers')
+  }, [])
+
+  useEffect(() => {
     searchMovies(searchTerm)
   }, [searchTerm])
 
@@ -71,12 +75,15 @@ function App() {
         <MovieHead heading = 'Favorites' />
       </div>
       <div className="row">
-        <MovieCards 
-        movies={favorites}
-        alterfav={RemoveFromFav}  
-        handleClick={RemoveMovieFromFav} 
-        />
-      </div>
+          {favorites.length > 0 
+          ? <MovieCards
+            key={movies.imdbID}
+            movies={favorites}
+            alterfav={RemoveFromFav}    
+            handleClick={RemoveMovieFromFav}        
+          />
+          : <p className="empty">Your favorite movies will be displayed here</p>}
+        </div>
     </div>
   );
 }
