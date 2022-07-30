@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Uchen&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 * {
   margin: 0;
@@ -7,7 +9,6 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
   background: #111;
   color: #ffffff;
 }
@@ -24,6 +25,7 @@ body {
 }
 
 .search-field {
+  cursor: default;
   width: 300px;
   padding: 10px;
   border-radius: 10px 0 10px 0;
@@ -31,10 +33,17 @@ body {
 }
 
 .search-field::placeholder {
+  font-family: 'Montserrat', sans-serif;
   color: white;
 }
 
+.search-field:focus {
+  outline-color:#3f4370;
+}
+
 .heading h1 {
+  /* font-family: 'Uchen', serif; */
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   font-size: 28px;
   font-weight: 500;
@@ -46,9 +55,9 @@ body {
   overflow-y: hidden;
 }
 
-/* .movie_container {
-  width: 100%;
-} */
+.row::-webkit-scrollbar {
+  height: 0 !important
+}
 
 .movie {
   margin: 10px;
@@ -70,9 +79,9 @@ body {
 }
 
 .movie:hover img {
-  /* border: 4px solid #8789a8; */
   cursor: pointer;
 }
+
 
 .overlay {
   position: absolute;
@@ -90,17 +99,18 @@ body {
 .overlay > * {
   position: absolute;
   top: 80%;
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   padding: 5px 10px;
   border-radius: 3px;
-  background-color: #8789a8;
+  background-color: #3f4370;
   transform: translateY(20px);
   transition: all 0.3s;
 }
 
 .overlay:hover {
   opacity: 1;
-  border: 4px solid #8789a8;
+  border: 4px solid #3f4370;
 }
 
 .overlay:hover > * {
@@ -108,26 +118,17 @@ body {
 }
 
 .title_year {
+  font-family: 'Roboto', sans-serif;
   width: 100%;
   margin: -5px 0 5px 10px;
   font-size: 14px;
 }
 
-/* .title_year>p:nth-child(1) {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  word-wrap: break-word;
-} */
 
 .title_year>p:nth-child(2) {
   font-weight: 300;
   color: #999;
 }
-
-/* .movie:hover .overlay {
-  opacity: 1;
-} */
 
 .empty {
   width: 100%;
@@ -157,7 +158,9 @@ body {
     width: 150px;
     padding: 8px;
   }
-
+  .search-field::placeholder {
+    font-size: 12px;
+  }
   .heading h1 {
     font-size: 22px;
   }
