@@ -67,21 +67,12 @@ body {
   transition: all 0.2s;
 }
 
-.movie:hover {
-  cursor: pointer;
-}
-
 .movie img {
   width: 200px;
   height: 100%;
   border: 4px solid white;
   transition: 0.2s ease-in;
 }
-
-.movie:hover img {
-  cursor: pointer;
-}
-
 
 .overlay {
   position: absolute;
@@ -115,6 +106,7 @@ body {
 
 .overlay:hover > * {
   transform: translateY(0);
+  cursor: pointer;
 }
 
 .title_year {
@@ -131,6 +123,7 @@ body {
 }
 
 .empty {
+  font-family: 'Roboto', sans-serif;
   width: 100%;
   height: 20vh;
   display: flex;

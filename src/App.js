@@ -7,6 +7,8 @@ import Search from "./components/Search";
 import AddToFav from './components/AddToFav';
 import RemoveFromFav from './components/RemoveFromFav';
 
+
+
 function App() {
 
   const [movies, setMovies] = useState([]);
@@ -87,11 +89,3 @@ function App() {
 }
 
 export default App;
-
-  // const bind = useScroll(event => {
-  //   set({
-  //     transform: `perspective(500px) rotateY(${
-  //       event.scrolling ? event.delta[0] : 0
-  //     }deg)`
-  //   });
-  // });
