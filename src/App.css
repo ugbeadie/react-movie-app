@@ -25,7 +25,7 @@ body {
 }
 
 .search-field {
-  cursor: default;
+  cursor: pointer;
   width: 300px;
   padding: 10px;
   border-radius: 10px 0 10px 0;
@@ -129,6 +129,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.title_year, .heading h1, .movie img {
+  cursor: default;
 }
 
 @media screen and (max-width: 770px) {

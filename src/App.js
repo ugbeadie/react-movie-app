@@ -58,13 +58,28 @@ function App() {
     saveToLocalStorage(favArray)
   }
 
+  const containers = document.querySelectorAll("#main");
+    for (let i = 0; i < containers.length; i++) {
+      let container=containers[i]
+      container.addEventListener("wheel", function (e) {
+				if (e.deltaY > 0) {
+				container.scrollLeft += 100;
+				e.preventDefault();
+				}
+				else {
+				container.scrollLeft -= 100;
+				e.preventDefault();
+				}
+			});      
+    }
+
   return (
     <div className="container">
       <div className="container-head">
         <MovieHead heading = 'Movies' />
         <Search value={searchTerm} setValue={setSearchTerm} />
       </div>
-      <div className="row">
+      <div id="main" className="row">
         <MovieCards 
         movies={movies}
         alterfav={AddToFav}  
@@ -74,7 +89,7 @@ function App() {
       <div className="container-head">
         <MovieHead heading = 'Favorites' />
       </div>
-      <div className="row">
+      <div id="main" className="row">
           {favorites.length > 0 
           ? <MovieCards
             key={movies.imdbID}
