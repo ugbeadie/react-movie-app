@@ -13,12 +13,12 @@
 
 .snackbar .symbol {
     flex: 20%;
-    color: #111;
+    /* color: #111; */
 }
 
 .snackbar .message {
     font-family: 'Roboto', sans-serif;
-    color: #111;
+    /* color: #111; */
     font-weight: 500;
     flex: 80%;
     text-align: start;
@@ -26,7 +26,7 @@
 
 #show {
     visibility: visible;
-    animation: fadeIn 0.5s, fadeOut 0.5s 1.6s;
+    animation: fadeIn 0.5s, fadeOut 0.5s 1.1s;
 }
 
 #hide {
