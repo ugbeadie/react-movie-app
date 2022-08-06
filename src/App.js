@@ -6,8 +6,7 @@ import MovieHead from "./components/MovieHead";
 import Search from "./components/Search";
 import AddToFav from './components/AddToFav';
 import RemoveFromFav from './components/RemoveFromFav';
-
-
+import ClearFavorite from './components/ClearFavorite'
 
 function App() {
 
@@ -38,7 +37,7 @@ function App() {
     (localStorage.getItem('favorites'))
     if (favoriteMovies) {
       setFavorites(favoriteMovies)
-    }
+    }  
   }, [])
 
   const saveToLocalStorage = (favArray) => {
@@ -46,14 +45,22 @@ function App() {
   }
 
   const addMovieToFav = (movie) => {
-    const favArray = [...favorites, movie]
-    setFavorites(favArray)
-    saveToLocalStorage(favArray)
+  const initialArray = [...favorites, movie]
+  const newArray = new Set(initialArray)
+  const favArray = [...newArray]
+  setFavorites(favArray)  
+  saveToLocalStorage(favArray)
   }
 
   const RemoveMovieFromFav = (movie) => {
     const favArray = favorites.filter(
       (favorite) => favorite.imdbID !== movie.imdbID)
+    setFavorites(favArray)
+    saveToLocalStorage(favArray)
+  }
+
+  const ClearFavoriteMovies = () => {
+    const favArray = []
     setFavorites(favArray)
     saveToLocalStorage(favArray)
   }
@@ -88,11 +95,13 @@ function App() {
       </div>
       <div className="container-head">
         <MovieHead heading = 'Favorites' />
+        <ClearFavorite
+          onclear={ClearFavoriteMovies}
+        />
       </div>
       <div id="main" className="row">
           {favorites.length > 0 
           ? <MovieCards
-            key={movies.imdbID}
             movies={favorites}
             alterfav={RemoveFromFav}    
             handleClick={RemoveMovieFromFav}        

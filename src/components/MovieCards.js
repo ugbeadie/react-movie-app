@@ -1,10 +1,10 @@
-import React, { useRef } from 'react'
-import Snackbar from './Snackbar'
+import React from 'react'
+// import Snackbar from './Snackbar'
 
 const MovieCards = (props) => {
 
 	const FavComponent = props.alterfav
-	const snackbarRef = useRef(null)
+	// const snackbarRef = useRef(null)
 
 	return (
 		<>
@@ -17,18 +17,18 @@ const MovieCards = (props) => {
 							<img
 							src={movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/400'}
 							alt={movie.Title}/>
-							<div
-							onClick={() => {
+							<div className='overlay'>
+								<div
+								onClick={() => {
 								props.handleClick(movie)
-								snackbarRef.current.show()
-								}}
-							className='overlay'>
-								<FavComponent/>
-								
+								// snackbarRef.current.show()
+								}}>
+								<FavComponent/>								
 							</div>
-							<Snackbar
+							</div>
+							{/* <Snackbar
 								ref={snackbarRef}
-							/>
+							/> */}
 						</div>
 						<div className='title_year'>
 							<p>{movie.Title}</p>

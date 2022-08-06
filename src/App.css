@@ -135,6 +135,16 @@ body {
   cursor: default;
 }
 
+.clear {
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  background-color: #555;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px 0 10px 0;
+  transition: 0.3s;
+}
+
 @media screen and (max-width: 770px) {
   .movie {
     width: 160px;
